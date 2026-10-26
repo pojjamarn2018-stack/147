@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>INNOVATION QUEST 🚀</title>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--sky1:#5ec8ff;--sky2:#c9f0ff;--card:#fff;--ink:#1d2b4f;--soft:#e8f3ff;--line:#cfe3f7;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--sky1:#18204a;--sky2:#2b3a7a;--card:#222c5c;--ink:#f1f5ff;--soft:#2e3a74;--line:#4a5aa0;color-scheme:dark}}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:inherit}
+body{margin:0;min-height:100vh;font-family:'Kanit','Sarabun',Tahoma,sans-serif;color:var(--ink);background:linear-gradient(var(--sky1),var(--sky2)) fixed}
+#app{max-width:640px;margin:0 auto;padding:14px 14px 90px}
+h2{margin:6px 0 10px;font-weight:800}
+.card{background:var(--card);border-radius:24px;padding:16px;box-shadow:0 6px 0 rgba(0,0,0,.15);margin:12px 0}
+/* ปุ่มสไตล์ Roblox: กลมมน มีเงาหนาด้านล่าง กดแล้วยุบลง */
+.btn{--c:#2ecc71;--d:#1e9a52;display:block;width:100%;border:0;border-radius:20px;padding:13px 18px;margin:10px 0;font:800 1.1rem 'Kanit',sans-serif;color:#fff;background:var(--c);box-shadow:0 6px 0 var(--d);cursor:pointer;text-align:center}
+.btn:active{transform:translateY(5px);box-shadow:0 1px 0 var(--d)}
+.btn:focus-visible,input:focus-visible{outline:4px solid #ffd93b;outline-offset:2px}
+.btn.big{font-size:1.4rem;padding:16px}
+.btn.b{--c:#2d9cff;--d:#1b6fc4}.btn.r{--c:#ff4d5e;--d:#c22a3a}.btn.y{--c:#ffc933;--d:#c9970f;color:#4a3500}.btn.p{--c:#9b5cff;--d:#6a35c9}.btn.s{width:auto;display:inline-block;padding:8px 14px;font-size:1rem;margin:0}
+.btn:disabled{opacity:.55;cursor:default}
+.logo{font-size:clamp(2.4rem,11vw,3.6rem);font-weight:800;line-height:1.05;text-align:center;color:#fff;margin:26px 0 6px;text-shadow:0 5px 0 #1b6fc4,0 9px 0 rgba(0,0,0,.2);-webkit-text-stroke:2px #1b6fc4;animation:bob 2.4s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-8px)}}
+.sub{text-align:center;font-weight:600;margin:0 0 8px}
+label{display:block;font-weight:600;margin:10px 0 4px}
+input{width:100%;border:3px solid var(--line);border-radius:16px;padding:12px;font:600 1.05rem 'Kanit',sans-serif;background:var(--soft);color:var(--ink)}
+.avs{display:flex;gap:8px;flex-wrap:wrap}
+.av{font-size:1.8rem;width:56px;height:56px;border-radius:50%;border:4px solid var(--line);background:var(--soft);cursor:pointer}
+.av.on{border-color:#ffc933;background:#fff6d1;transform:scale(1.1)}
+.err{color:#e0243a;font-weight:600;min-height:1.3em;margin:6px 0}
+.hud{display:flex;align-items:center;gap:8px;justify-content:space-between;flex-wrap:wrap}
+.pill{background:var(--card);border-radius:999px;padding:5px 14px;font-weight:800;box-shadow:0 3px 0 rgba(0,0,0,.15)}
+.bar{height:16px;border-radius:99px;background:var(--soft);overflow:hidden;border:3px solid var(--card);margin:10px 0}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,#2ecc71,#ffd93b);border-radius:99px;transition:width .2s linear}
+.bar i.low{background:#ff4d5e}
+.lvl{display:flex;gap:12px;align-items:center;padding:14px;border-radius:24px;background:var(--card);box-shadow:0 6px 0 rgba(0,0,0,.15);margin:14px 0;border-left:12px solid var(--c)}
+.lvl.lock{opacity:.6;filter:grayscale(.7)}
+.ic{font-size:2.2rem;width:64px;height:64px;border-radius:20px;display:grid;place-items:center;background:var(--c);flex:none;box-shadow:0 4px 0 rgba(0,0,0,.2)}
+.lvl h3{margin:0;font-size:1.15rem}.lvl p{margin:2px 0;font-size:.9rem;opacity:.85}
+.stars{font-size:1.2rem;letter-spacing:2px}
+.q{font-size:1.15rem;font-weight:600;line-height:1.5}
+.tag{display:inline-block;background:#ffc933;color:#4a3500;border-radius:99px;padding:2px 12px;font-weight:800;font-size:.85rem;margin-bottom:6px}
+.opt{text-align:left;font-weight:600;font-size:1rem;display:flex;gap:10px;align-items:center}
+.opt b{background:rgba(255,255,255,.3);border-radius:50%;width:32px;height:32px;display:grid;place-items:center;flex:none}
+.opt.good{outline:5px solid #2ecc71}.opt.mid{outline:5px solid #ffc933}.opt.bad{opacity:.5}
+.fb{border-radius:20px;padding:12px 14px;font-weight:600;line-height:1.5;margin-top:10px;background:var(--soft);border:3px solid var(--line)}
+.npc{display:flex;gap:10px;align-items:flex-start}.npc .em{font-size:3rem}
+.big-n{font-size:2.6rem;font-weight:800;text-align:center}
+table{width:100%;border-collapse:collapse;font-size:.9rem}th,td{padding:7px 5px;text-align:center;border-bottom:2px solid var(--line)}th:first-child,td:first-child{text-align:left}
+tr.row{cursor:pointer}tr.row:hover{background:var(--soft)}
+.mini{height:12px;border-radius:9px;background:var(--soft);overflow:hidden}.mini i{display:block;height:100%;background:#2d9cff}
+textarea{width:100%;height:90px;border-radius:14px;border:3px solid var(--line);background:var(--soft);color:var(--ink);font-size:.8rem;padding:8px}
+.cert{text-align:center;border:8px double #ffc933;border-radius:24px;padding:18px;background:linear-gradient(#fffbea,#fff1b8);color:#4a3500}
+.cert h2{font-size:1.7rem;margin:4px 0}
+#snd{position:fixed;right:12px;top:calc(10px + env(safe-area-inset-top,0px));z-index:5;width:48px;height:48px;border-radius:50%;border:0;font-size:1.4rem;background:#ffc933;box-shadow:0 4px 0 #c9970f;cursor:pointer}
+@media (prefers-reduced-motion:reduce){.logo{animation:none}}
+</style>
+</head>
+<body>
+<button id="snd" onclick="toggleSnd()" aria-label="เปิดปิดเสียง">🔊</button>
+<div id="app"></div>
+<script>
+/* ============================================================
+   INNOVATION QUEST — ข้อมูลเกม (แก้ไขได้ที่ Array นี้)
+   LV[n].q = รายการคำถาม  {t:โจทย์, o:[[ตัวเลือก,คะแนน],...], e:คำอธิบาย}
+   คะแนนตัวเลือก: 2 = ถูกที่สุด, 1 = พอใช้, 0 = ผิด
+   (ใส่ข้อถูกไว้ตัวแรกได้เลย ระบบจะสลับตำแหน่งตัวเลือกให้เอง)
+   ============================================================ */
+const AV=['🧑‍🚀','🦊','🤖','🐼','🦄','🐯'];
+const LV=[
+{n:'รู้จักนวัตกรรม',ic:'💡',c:'#2d9cff',type:'Quiz Challenge',sec:25,
+ intro:'สวัสดี! ฉันศาสตราจารย์โนวา 🤖 นวัตกรรมคือการนำ "สิ่งใหม่" หรือ "การพัฒนาสิ่งเดิมให้ดีขึ้น" มาใช้ประโยชน์จริง ตอบให้ถูกเพื่อปลดล็อกด่านต่อไป!',
+ q:[
+ {t:'นวัตกรรมหมายถึงข้อใด?',o:[['สิ่งใหม่หรือการพัฒนาสิ่งเดิมให้ดีขึ้น แล้วนำไปใช้ประโยชน์จริง',2],['สิ่งของเก่าแก่โบราณ',0],['สิ่งของที่มีราคาแพง',0],['สิ่งที่ซื้อมาจากต่างประเทศ',0]],e:'นวัตกรรม = ความใหม่ + นำไปใช้จริง + เกิดประโยชน์'},
+ {t:'สิ่งประดิษฐ์ต่างจากนวัตกรรมอย่างไร?',o:[['นวัตกรรมต้องถูกนำไปใช้จริงและสร้างประโยชน์',2],['สิ่งประดิษฐ์ต้องใช้ไฟฟ้าเท่านั้น',0],['นวัตกรรมมีเฉพาะในห้องทดลอง',0],['ไม่แตกต่างกันเลย',0]],e:'สิ่งประดิษฐ์อาจเป็นแค่ผลงานชิ้นหนึ่ง แต่นวัตกรรมต้องถูกใช้งานจริงและเกิดผลดี'},
+ {t:'ข้อใดเป็นนวัตกรรมในชีวิตประจำวัน?',o:[['แอปจ่ายเงินผ่านมือถือ',2],['ก้อนหินริมทาง',0],['ต้นไม้ในป่า',0],['ก้อนเมฆบนท้องฟ้า',0]],e:'แอปจ่ายเงินเป็นวิธีใหม่ที่ทำให้ชีวิตสะดวกขึ้น จึงเป็นนวัตกรรม'},
+ {t:'ร้านอาหารคิดขั้นตอนรับออเดอร์แบบใหม่ ให้ลูกค้าได้อาหารเร็วขึ้น เป็นนวัตกรรมประเภทใด?',o:[['นวัตกรรมกระบวนการ',2],['นวัตกรรมผลิตภัณฑ์',0],['ไม่ใช่นวัตกรรม',0],['นวัตกรรมของเล่น',0]],e:'ประเภทหลักคือ ผลิตภัณฑ์ กระบวนการ บริการ และสังคม — การปรับขั้นตอนการทำงานคือกระบวนการ'},
+ {t:'สมาร์ตโฟนพัฒนามาจากโทรศัพท์บ้าน แสดงว่านวัตกรรมเกิดจากอะไร?',o:[['การพัฒนาสิ่งเดิมให้ดีขึ้น',2],['การเดาสุ่ม',0],['การลอกของคนอื่นทุกอย่าง',0],['การหยุดคิดสิ่งใหม่',0]],e:'นวัตกรรมไม่จำเป็นต้องใหม่หมด อาจต่อยอดจากของเดิมได้'},
+ {t:'ข้อใด "ยังไม่ใช่" นวัตกรรม?',o:[['ไอเดียที่คิดไว้ แต่ไม่เคยนำไปใช้',2],['ถังขยะแยกประเภทที่โรงเรียนใช้อยู่',0],['แอปเรียนออนไลน์ที่นักเรียนใช้ทุกวัน',0],['แก้วน้ำพับได้ที่คนใช้จริง',0]],e:'ถ้ายังไม่ถูกนำไปใช้ประโยชน์ ก็ยังเป็นเพียงไอเดีย'}]},
+{n:'นักสืบปัญหา',ic:'🔍',c:'#ff8a3d',type:'Problem Solving',sec:30,
+ intro:'นวัตกรรมเริ่มจาก "ปัญหา" ที่ชัดเจน! วันนี้โรงเรียนมีขยะล้นถัง น้ำดื่มไม่พอ และห้องเรียนร้อน มาช่วยกันสืบว่าควรแก้อะไรก่อน 🕵️',
+ q:[
+ {t:'โรงเรียนมีปัญหา: ขยะล้นถัง, น้ำดื่มไม่พอช่วงพักเที่ยง, ห้องเรียนร้อน ปัญหาใดควรเริ่มแก้ก่อนถ้านักเรียนทุกคนเดือดร้อนทุกวันและกระทบสุขภาพ?',o:[['น้ำดื่มไม่เพียงพอ',2],['ห้องเรียนร้อน',1],['สีกำแพงซีดจาง',0],['ไม่ต้องแก้ปัญหาใดเลย',0]],e:'เลือกปัญหาที่กระทบคนจำนวนมาก เกี่ยวกับสุขภาพ และเกิดบ่อยที่สุดก่อน'},
+ {t:'สำรวจพบว่าขยะ 70% เป็นกล่องโฟมใส่อาหาร ควรแก้ที่ใด?',o:[['ลดการใช้กล่องโฟมที่ต้นเหตุ',2],['เพิ่มจำนวนคนเก็บขยะ',1],['ซื้อถังขยะใบใหญ่ขึ้นอย่างเดียว',0],['ห้ามกินข้าว',0]],e:'การแก้ที่ต้นเหตุช่วยให้ปัญหาลดลงอย่างยั่งยืน'},
+ {t:'ก่อนแก้ปัญหา วิธีหาข้อมูลแบบใดดีที่สุด?',o:[['สังเกตและสัมภาษณ์เพื่อนหลายคน',2],['เดาจากความรู้สึกคนเดียว',0],['ถามแค่เพื่อนสนิท 1 คน',0],['ไม่หาข้อมูล',0]],e:'ข้อมูลจากหลายคนทำให้เห็นปัญหาจริงและเป็นกลางมากขึ้น'},
+ {t:'ห้องเรียนร้อน ควรเก็บข้อมูลอย่างไร?',o:[['วัดอุณหภูมิหลายเวลาและหลายตำแหน่งในห้อง',2],['วัดครั้งเดียวตอนเช้า',1],['ใช้มือแตะผนังแล้วเดา',0],['ไม่ต้องวัด',0]],e:'ข้อมูลที่ครบหลายช่วงเวลาช่วยหาสาเหตุได้แม่นยำ'},
+ {t:'ข้อใดเขียนปัญหาได้ชัดเจนที่สุด?',o:[['นักเรียน ม.1/2 มีน้ำดื่มเย็นไม่พอช่วงพักเที่ยง',2],['โรงเรียนแย่มาก',0],['ทุกอย่างไม่ดี',0],['น้ำ',0]],e:'ปัญหาที่ชัดต้องบอกว่า ใคร เจออะไร เมื่อไร'}]},
+{n:'ห้องทดลองไอเดีย',ic:'🧪',c:'#9b5cff',type:'Creative Lab',sec:30,
+ intro:'ยินดีต้อนรับสู่ห้องทดลอง! เลือก "วัสดุ" และ "วิธีแก้ปัญหา" ที่เหมาะสมเพื่อสร้างต้นแบบนวัตกรรม 3 ชิ้น 🛠️',
+ q:[
+ {t:'🔥 ต้นแบบที่ 1 "ห้องเรียนเย็นลง" — เลือกวัสดุ',o:[['ผ้าม่านสีอ่อนหรือแผ่นสะท้อนความร้อน',2],['กระถางต้นไม้ริมหน้าต่าง',1],['ผ้าห่มหนา',0],['กระดาษดำปิดหน้าต่าง',0]],e:'สีอ่อนสะท้อนความร้อนได้ดี ส่วนผ้าหนาและสีดำจะเก็บความร้อน'},
+ {t:'🔥 ต้นแบบที่ 1 — เลือกวิธีติดตั้ง',o:[['ติดบังแดดด้านนอกหน้าต่างฝั่งที่โดนแดด',2],['เปิดหน้าต่างทิศที่มีลมผ่าน',1],['ปิดทุกช่องทางลม',0],['ย้ายนักเรียนไปนั่งกลางแดด',0]],e:'กันแดดก่อนเข้าห้องได้ผลดีกว่าแก้ทีหลัง'},
+ {t:'♻️ ต้นแบบที่ 2 "ลดขยะ" — เลือกวัสดุ',o:[['ถังหลายสีพร้อมป้ายรูปภาพบอกประเภทขยะ',2],['ถังใบเดียวขนาดใหญ่',0],['กล่องกระดาษไม่มีป้าย',0],['ถุงดำปิดสนิท',1]],e:'สีและรูปภาพช่วยให้ทุกคนแยกขยะได้ง่าย'},
+ {t:'♻️ ต้นแบบที่ 2 — เลือกวิธีทดสอบ',o:[['ทดลอง 1 สัปดาห์ แล้วชั่งน้ำหนักขยะแต่ละประเภท',2],['ใช้ไป 1 วันแล้วเลิก',0],['ไม่ต้องทดสอบ',0],['ถามแค่ว่าสวยไหม',1]],e:'การทดสอบด้วยข้อมูลช่วยให้รู้ว่านวัตกรรมได้ผลจริงหรือไม่'},
+ {t:'💧 ต้นแบบที่ 3 "น้ำดื่มพอทุกคน" — เลือกวัสดุ',o:[['ถังน้ำมีก๊อกและไส้กรองที่สะอาดปลอดภัย',2],['ขวดเก่าไม่ล้างสะอาด',0],['ถังเปิดฝาตั้งกลางแจ้ง',0],['แก้วกระดาษใช้ครั้งเดียว',1]],e:'ความสะอาดปลอดภัยต้องมาก่อน และลดขยะด้วยก็ดี'},
+ {t:'💧 ต้นแบบที่ 3 — ขั้นตอนพัฒนาที่เหมาะสม',o:[['ทำต้นแบบ → ทดสอบ → ปรับปรุง',2],['ทำเสร็จแล้วใช้เลยไม่ต้องทดสอบ',0],['ทดสอบอย่างเดียว ไม่ปรับปรุง',1],['ทิ้งต้นแบบไว้ไม่ใช้',0]],e:'นวัตกรรมที่ดีพัฒนาเป็นวงจร: สร้าง ทดสอบ ปรับปรุง'}]},
+{n:'ภารกิจนักนวัตกร',ic:'🏆',c:'#2ecc71',type:'Final Mission',sec:35,
+ intro:'ภารกิจสุดท้าย! ชุมชนใกล้โรงเรียนมีน้ำท่วมขังหลังฝนตกทุกครั้ง ใช้กระบวนการสร้างนวัตกรรมทั้งหมดที่เรียนมาช่วยชุมชน 🌧️',
+ q:[
+ {t:'ขั้นตอนแรกของการสร้างนวัตกรรมคืออะไร?',o:[['ระบุและทำความเข้าใจปัญหา',2],['ขายสินค้าทันที',0],['ทำเสร็จแล้วค่อยหาปัญหา',0],['รอให้คนอื่นคิดให้',0]],e:'เริ่มจากปัญหา → คิดไอเดีย → ออกแบบ → สร้างต้นแบบ → ทดสอบ → ปรับปรุง → นำเสนอ'},
+ {t:'ชุมชนน้ำท่วมขัง นักเรียนควรทำสิ่งใดก่อน?',o:[['สำรวจจุดที่น้ำขังและถามชาวบ้านถึงสาเหตุ',2],['ซื้อเครื่องสูบน้ำทันที',1],['บอกว่าไม่ใช่ปัญหาของเรา',0],['ปล่อยไว้',0]],e:'ต้องเข้าใจสาเหตุจริงก่อน จึงออกแบบทางแก้ได้ตรงจุด'},
+ {t:'ไอเดียใดเหมาะสมที่สุดกับงบน้อยและวัสดุหาง่าย?',o:[['ทำตะแกรงดักขยะหน้าท่อระบายน้ำจากวัสดุเหลือใช้',2],['สร้างเขื่อนขนาดใหญ่',0],['ย้ายชุมชนทั้งหมด',0],['ขุดอุโมงค์ใต้ดินยาวสิบกิโลเมตร',1]],e:'ไอเดียต้องทำได้จริงภายใต้เวลา งบ และวัสดุที่มี'},
+ {t:'ทดสอบต้นแบบตะแกรงแล้วพบว่าน้ำยังระบายช้า ควรทำอย่างไร?',o:[['ปรับขนาดช่องตะแกรงแล้วทดสอบซ้ำ',2],['เลิกทำทันที',0],['ปิดข้อมูลไม่บอกใคร',0],['ทำเหมือนเดิมซ้ำ',0]],e:'การปรับปรุงจากผลทดสอบคือหัวใจของนวัตกรรม'},
+ {t:'ข้อใดคือการประเมินว่านวัตกรรมประสบความสำเร็จ?',o:[['น้ำท่วมขังลดลงและชุมชนใช้ต่อเนื่อง',2],['ตะแกรงมีสีสวยอย่างเดียว',0],['มีคนถ่ายรูปเยอะ',1],['ทำเสร็จเร็วที่สุด',0]],e:'ความสำเร็จวัดจากประโยชน์ที่เกิดขึ้นจริงและการนำไปใช้ต่อ'},
+ {t:'หลังสำเร็จ ควรทำอะไรต่อเพื่อให้เป็นนวัตกรรมที่แท้จริง?',o:[['นำเสนอและแบ่งปันวิธีทำให้ชุมชนอื่นนำไปใช้',2],['เก็บเป็นความลับตลอดไป',0],['ลืมมันไป',0],['ทิ้งตะแกรงไว้ไม่ดูแล',1]],e:'การเผยแพร่ทำให้ประโยชน์ขยายวงกว้างขึ้น'}]}
+];
+const OPT_COL=['b','r','y','p'];
+
+/* ---------------- ข้อมูลผู้เล่น (localStorage) ---------------- */
+let DB={s:{},cur:null};
+try{DB=JSON.parse(localStorage.getItem('iq_v1'))||DB}catch(e){}
+function save(){try{localStorage.setItem('iq_v1',JSON.stringify(DB))}catch(e){}}
+const $=s=>document.querySelector(s), me=()=>DB.s[DB.cur];
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const view=h=>{$('#app').innerHTML=h;window.scrollTo(0,0)};
+let G={timer:0}, selAv=AV[0];
+function go(fn,...a){clearInterval(G.timer);fn(...a)}
+const stars=n=>'⭐'.repeat(n)+'☆'.repeat(3-n);
+const unlocked=n=>n==0||((me().L[n-1]||{}).stars>0);
+const total=s=>Object.values(s.L).reduce((a,l)=>a+l.best,0);
+
+/* ---------------- เสียง (WebAudio สร้างเสียงเอง ไม่ต้องใช้ไฟล์) ---------------- */
+let AC=null,musicOn=true,mTimer=0,step=0;
+function aud(){try{if(!AC)AC=new(window.AudioContext||window.webkitAudioContext)();if(AC.state=='suspended')AC.resume()}catch(e){}return AC}
+function tone(f,d,type,v,delay){if(!AC)return;const t=AC.currentTime+(delay||0),o=AC.createOscillator(),g=AC.createGain();o.type=type;o.frequency.value=f;g.gain.setValueAtTime(v,t);g.gain.exponentialRampToValueAtTime(.001,t+d);o.connect(g);g.connect(AC.destination);o.start(t);o.stop(t+d)}
+const MEL=[523,659,784,659,880,784,659,587,523,659,784,1047,880,784,659,587],BASS=[131,131,196,196,175,175,196,147];
+function startMusic(){aud();if(mTimer)return;mTimer=setInterval(()=>{if(!musicOn||!AC)return;tone(MEL[step%16],.25,'triangle',.05);if(step%2==0)tone(BASS[(step>>1)%8],.5,'sine',.07);step++},280)}
+function sfx(ok){if(!musicOn||!AC)return;if(ok)[523,659,784,1047].forEach((f,i)=>tone(f,.2,'square',.06,i*.08));else[220,165].forEach((f,i)=>tone(f,.3,'sawtooth',.05,i*.14))}
+function toggleSnd(){musicOn=!musicOn;$('#snd').textContent=musicOn?'🔊':'🔇';if(musicOn)startMusic()}
+
+/* ---------------- หน้าแรก ---------------- */
+function home(){
+  const m=me();if(m)selAv=m.av;
+  view(`<div class="logo">INNOVATION<br>QUEST 🚀</div><p class="sub">ผจญภัยสร้างนวัตกรรม สำหรับนักเรียน ม.1</p>
+  <div class="card"><label for="nm">ชื่อผู้เล่น</label><input id="nm" maxlength="20" value="${m?esc(m.name):''}" placeholder="เช่น น้องมะลิ">
+  <label for="cl">ห้อง / เลขที่</label><input id="cl" maxlength="14" value="${m?esc(m.cls):''}" placeholder="เช่น ม.1/2 เลขที่ 5">
+  <label>เลือกตัวละคร</label><div class="avs">${AV.map(a=>`<button class="av ${a==selAv?'on':''}" onclick="pickAv(this)">${a}</button>`).join('')}</div>
+  <p id="err" class="err"></p><button class="btn big" onclick="start()">▶ เริ่มผจญภัย</button>
+  <button class="btn b" onclick="go(dash)">📊 แดชบอร์ดนักเรียน</button></div>`)}
+function pickAv(b){selAv=b.textContent;document.querySelectorAll('.av').forEach(x=>x.classList.toggle('on',x==b))}
+function start(){
+  const name=$('#nm').value.trim(),cls=$('#cl').value.trim();
+  if(!name||!cls){$('#err').textContent='กรอกชื่อและห้อง/เลขที่ก่อนเริ่มเล่นนะ';return}
+  const id=(name+'|'+cls).toLowerCase();
+  if(!DB.s[id])DB.s[id]={name,cls,av:selAv,L:{},t0:Date.now()};
+  DB.s[id].av=selAv;DB.cur=id;save();startMusic();go(map)}
+
+/* ---------------- แผนที่เลือกด่าน ---------------- */
+function map(){
+  const m=me(),done=LV.filter((_,i)=>(m.L[i]||{}).stars>0).length;
+  view(`<div class="hud"><span class="pill">${m.av} ${esc(m.name)}</span><span class="pill">⭐ ${total(m)} คะแนน</span></div>
+  <h2>🗺️ แผนที่ผจญภัย</h2><div class="bar" title="ความคืบหน้า"><i style="width:${done*25}%"></i></div><p class="sub">ผ่านแล้ว ${done}/4 ด่าน</p>
+  ${LV.map((l,i)=>{const r=m.L[i],ok=unlocked(i);return `<div class="lvl ${ok?'':'lock'}" style="--c:${l.c}"><div class="ic">${ok?l.ic:'🔒'}</div><div style="flex:1"><h3>ด่านที่ ${i+1}: ${l.n}</h3><p>${l.type}</p><span class="stars">${stars(r?r.stars:0)}</span>${r?` <small>สูงสุด ${r.best}</small>`:''}</div><button class="btn s" style="--c:${l.c};--d:rgba(0,0,0,.3)" ${ok?'':'disabled'} onclick="go(brief,${i})">${r?'เล่นอีก':'เล่น'}</button></div>`}).join('')}
+  ${done==4?'<button class="btn y" onclick="go(cert)">🎓 ดูใบประกาศ</button>':''}
+  <button class="btn b" onclick="go(dash,DB.cur)">📊 สถิติของฉัน</button><button class="btn r" onclick="go(home)">🏠 หน้าแรก / เปลี่ยนผู้เล่น</button>`)}
+
+/* ---------------- ภารกิจ (briefing) และการเล่น ---------------- */
+function brief(n){const l=LV[n];
+  view(`<h2>ด่านที่ ${n+1}: ${l.n} ${l.ic}</h2><div class="card npc"><div class="em">🤖</div><div><b>ศาสตราจารย์โนวา</b><p>${l.intro}</p></div></div>
+  <div class="card">❤️ มีหัวใจ 3 ดวง · ⏱️ ข้อละ ${l.sec} วินาที · 🎯 ${l.q.length} ข้อ</div>
+  <button class="btn big" onclick="go(play,${n})">เริ่มภารกิจ!</button><button class="btn r" onclick="go(map)">← กลับแผนที่</button>`)}
+function play(n){G={lv:n,i:0,hp:3,sc:0,ok:0,tl:0,timer:0,t:0};aud();ask()}
+function ask(){
+  const l=LV[G.lv],q=l.q[G.i];
+  G.opts=q.o.map(x=>x).sort(()=>Math.random()-.5);G.done=false;G.t=Date.now();
+  view(`<div class="hud"><button class="btn r s" onclick="go(map)" aria-label="ออก">✖</button><span class="pill">${'❤️'.repeat(G.hp)}${'🖤'.repeat(3-G.hp)}</span><span class="pill">⭐ ${G.sc}</span><span class="pill" id="tm">⏱️ ${l.sec}</span></div>
+  <div class="bar"><i id="tb" style="width:100%"></i></div>
+  <div class="card"><span class="tag">ข้อ ${G.i+1}/${l.q.length} · ${l.type}</span><div class="q">${q.t}</div></div>
+  ${G.opts.map((o,k)=>`<button class="btn opt ${OPT_COL[k]}" onclick="pick(${k})"><b>${'กขคง'[k]}</b>${o[0]}</button>`).join('')}<div id="fb"></div>`);
+  G.timer=setInterval(()=>{const left=Math.max(0,l.sec-(Date.now()-G.t)/1000);$('#tb').style.width=left/l.sec*100+'%';$('#tb').className=left<7?'low':'';$('#tm').textContent='⏱️ '+Math.ceil(left);if(left<=0)pick(-1)},200)}
+function pick(k){
+  if(G.done)return;G.done=true;clearInterval(G.timer);
+  const l=LV[G.lv],q=l.q[G.i],left=Math.max(0,l.sec-(Date.now()-G.t)/1000),pts=k>=0?G.opts[k][1]:0;
+  if(pts==2){G.sc+=10+Math.floor(left/5);G.ok++}else if(pts==1)G.sc+=5;else G.hp--;
+  G.tl+=left;sfx(pts>0);
+  document.querySelectorAll('.opt').forEach((b,i)=>{b.disabled=true;const p=G.opts[i][1];b.classList.add(p==2?'good':(i==k&&p==1)?'mid':i==k?'bad':'bad');if(p==2)b.classList.remove('bad')});
+  const last=G.i+1>=l.q.length||G.hp<=0;
+  $('#fb').innerHTML=`<div class="fb">${k<0?'⏰ หมดเวลา! ':pts==2?'✅ ถูกต้อง! ':pts==1?'🟡 ใช้ได้ แต่มีทางที่ดีกว่า ':'❌ ยังไม่ใช่ (เสียหัวใจ 1 ดวง) '}${q.e}</div><button class="btn big" onclick="${last?'finish()':'next()'}">${last?'ดูผล →':'ข้อต่อไป →'}</button>`;
+  $('#fb').scrollIntoView({behavior:'smooth',block:'end'})}
+function next(){G.i++;ask()}
+
+/* ---------------- สรุปผลด่าน ---------------- */
+function finish(){
+  const m=me(),l=LV[G.lv],pass=G.hp>0,n=l.q.length,old=m.L[G.lv]||{att:0,best:0,stars:0};
+  const st=pass?G.hp:0,rec={att:old.att+1,best:old.best,stars:Math.max(old.stars,st),ok:old.ok,tot:old.tot,tl:old.tl};
+  if(G.sc>=old.best||!old.tot){rec.best=G.sc;rec.ok=G.ok;rec.tot=n;rec.tl=Math.round(G.tl/n*10)/10}
+  m.L[G.lv]=rec;save();
+  const nx=G.lv<3&&pass;
+  view(`<div class="card" style="text-align:center"><div class="big-n">${pass?'🎉 ผ่านด่าน!':'😢 หัวใจหมด'}</div><div class="stars" style="font-size:2.4rem">${stars(st)}</div>
+  <p>คะแนนรอบนี้ <b>${G.sc}</b> · ตอบถูก ${G.ok}/${G.i+1} ข้อ · เวลาเหลือเฉลี่ย ${Math.round(G.tl/(G.i+1))} วินาที/ข้อ</p><p>${pass?(G.lv==3?'คุณคือนักนวัตกรตัวจริง!':'ปลดล็อกด่านต่อไปแล้ว'):'ลองอ่านคำอธิบายแล้วลองใหม่อีกครั้งนะ'}</p></div>
+  ${pass&&G.lv==3?'<button class="btn y big" onclick="go(cert)">🎓 รับใบประกาศ</button>':''}
+  ${nx?`<button class="btn big" onclick="go(brief,${G.lv+1})">ด่านต่อไป ▶</button>`:''}
+  <button class="btn b" onclick="go(play,${G.lv})">🔁 เล่นด่านนี้อีกครั้ง</button><button class="btn p" onclick="go(map)">🗺️ แผนที่</button>`);
+  if(pass)sfx(true)}
+
+/* ---------------- ใบประกาศ ---------------- */
+function cert(){
+  const m=me(),a=Object.values(m.L),ok=a.reduce((x,l)=>x+l.ok,0),tot=a.reduce((x,l)=>x+l.tot,0)||1,pc=Math.round(ok/tot*100);
+  const g=pc>=90?['🥇','ระดับทอง']:pc>=70?['🥈','ระดับเงิน']:['🥉','ระดับทองแดง'];
+  view(`<div class="cert"><div style="font-size:3rem">🏆</div><h2>ใบประกาศนักนวัตกร</h2><p>มอบให้</p><h2>${m.av} ${esc(m.name)}</h2><p>${esc(m.cls)}</p><p>ผ่านภารกิจ INNOVATION QUEST ครบทั้ง 4 ด่าน</p>
+  <div style="font-size:2.6rem">${g[0]}</div><b>${g[1]}</b><p>คะแนนรวม ${total(m)} · ความแม่นยำ ${pc}%<br>${new Date().toLocaleDateString('th-TH',{dateStyle:'long'})}</p></div>
+  <p class="sub">แคปหน้าจอเพื่อเก็บหรือส่งครูได้เลย 📸</p><button class="btn p" onclick="go(map)">🗺️ กลับแผนที่</button>`)}
+
+/* ---------------- แดชบอร์ดรายบุคคล ---------------- */
+function dash(id){
+  const all=Object.entries(DB.s);
+  if(id&&DB.s[id]){const s=DB.s[id],a=Object.values(s.L),ok=a.reduce((x,l)=>x+l.ok,0),tot=a.reduce((x,l)=>x+l.tot,0);
+    view(`<h2>📊 ${s.av} ${esc(s.name)}</h2><p class="sub">${esc(s.cls)} · คะแนนรวม ${total(s)} · แม่นยำ ${tot?Math.round(ok/tot*100):0}%</p>
+    ${LV.map((l,i)=>{const r=s.L[i];return `<div class="card"><b>${l.ic} ด่าน ${i+1}: ${l.n}</b>${r?`<div class="stars">${stars(r.stars)}</div><div class="mini"><i style="width:${Math.round(r.ok/r.tot*100)}%"></i></div>
+    <small>คะแนนสูงสุด ${r.best} · ถูก ${r.ok}/${r.tot} · เล่น ${r.att} ครั้ง · เวลาเหลือเฉลี่ย ${r.tl} วินาที/ข้อ</small>`:'<br><small>ยังไม่ได้เล่น</small>'}</div>`}).join('')}
+    <button class="btn b" onclick="go(dash)">← รายชื่อทั้งหมด</button>`);return}
+  const csv='ชื่อ,ห้อง,คะแนนรวม,'+LV.map((l,i)=>'ด่าน'+(i+1)).join(',')+'\n'+all.map(([k,s])=>[s.name,s.cls,total(s),...LV.map((l,i)=>s.L[i]?s.L[i].best:0)].map(v=>'"'+String(v).replace(/"/g,'""')+'"').join(',')).join('\n');
+  view(`<h2>📊 แดชบอร์ดนักเรียน</h2><p class="sub">ข้อมูลเก็บในเครื่องนี้ · แตะชื่อเพื่อดูรายละเอียด</p>
+  <div class="card">${all.length?`<table><tr><th>นักเรียน</th><th>ห้อง</th><th>คะแนน</th><th>ด่าน</th></tr>${all.sort((a,b)=>total(b[1])-total(a[1])).map(([k,s])=>`<tr class="row" onclick="go(dash,'${k.replace(/'/g,"\\'").replace(/"/g,'&quot;')}')"><td>${s.av} ${esc(s.name)}</td><td>${esc(s.cls)}</td><td>${total(s)}</td><td>${Object.values(s.L).filter(l=>l.stars>0).length}/4</td></tr>`).join('')}</table>`:'ยังไม่มีข้อมูล เริ่มเล่นเพื่อสร้างโปรไฟล์'}</div>
+  ${all.length?`<div class="card"><b>📋 CSV สำหรับครู (คัดลอกไปวางใน Excel)</b><textarea readonly onclick="this.select()">${esc(csv)}</textarea></div>`:''}
+  <button class="btn b" onclick="go(${DB.cur?'map':'home'})">← กลับ</button>`)}
+
+DB.cur&&DB.s[DB.cur]?home():home();
+</script>
+</body>
+</html>
